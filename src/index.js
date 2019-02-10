@@ -86,7 +86,7 @@ class Game extends React.Component {
       console.debug(step);
       console.debug(move);
       const desc = move ?
-        'Go to move #' + move : //+ ': (' + step.coordinates.row + ', ' + step.coordinates.col + ')':
+        'Go to move #' + move + ': (' + step.coordinates.row + ', ' + step.coordinates.col + ')':
         'Go to game start';
       const itemClass = move === this.state.stepNumber ? 'move-selected' : '';
       return (
