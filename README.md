@@ -1,8 +1,8 @@
 # React tic-tac-toe
 
-Implemented based on https://reactjs.org/tutorial/tutorial.html.
+Implemented based on https://reactjs.org/tutorial/tutorial.html to learn the basics of React.
 
-## TODO
+## To Do
 
  * Display the location for each move in the format (col, row) in the move history list.
  * Bold the currently selected item in the move list.
