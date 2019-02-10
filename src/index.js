@@ -99,9 +99,11 @@ class Game extends React.Component {
     let status;
     if (winner) {
       status = 'Winner: ' + winner;
+    } else if (isBoardFull(current.squares)) {
+      status = 'Draw!';
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-    }
+    } 
 
     if (!this.state.isAscending) {
       moves.reverse();
@@ -150,6 +152,15 @@ function calculateWinner(squares) {
     }
   }
   return null;
+}
+
+function isBoardFull(squares) {
+  for (let i = 0; i < squares.length; i++) {
+    if (squares[i] === null) {
+      return false;
+    }
+  }
+  return true;
 }
 
 function indexToCoordinates(index) {
