@@ -105,10 +105,10 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     } 
 
-    if (!this.state.isAscending) {
+    const isReversed = !this.state.isAscending;
+    if (isReversed) {
       moves.reverse();
     }
-    const reversed = !this.state.isAscending;
 
     return (
       <div className="game">
@@ -121,7 +121,7 @@ class Game extends React.Component {
         <div className="game-info">
           <div>{status}</div>
           <button onClick={() => this.sortMoves()}>Sort</button>
-          <ol reversed={reversed}>{moves}</ol>
+          <ol reversed={isReversed}>{moves}</ol>
         </div>
       </div>
     );
